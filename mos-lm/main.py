@@ -92,13 +92,13 @@ parser.add_argument('--moment', action='store_false',
                     help='using moment regularization')
 parser.add_argument('--moment_split', type=int, default=7000,
                     help='threshold for rare and popular words')
-parser.add_argument('--moment_lambda', type=int, default=0.05,
+parser.add_argument('--moment_lambda', type=float, default=0.05,
                     help='lambda')
 parser.add_argument('--adv', action='store_true',
                     help='using adversarial regularization')
 parser.add_argument('--adv_bias', type=int, default=8000,
                     help='threshold for rare and popular words')
-parser.add_argument('--adv_lambda', type=int, default=0.1,
+parser.add_argument('--adv_lambda', type=float, default=0.1,
                     help='lambda')
 parser.add_argument('--adv_lr', type=float,  default=0.02,
                     help='adv learning rate')
