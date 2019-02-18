@@ -133,13 +133,7 @@ if torch.cuda.is_available():
         print("WARNING: You have a CUDA device, so you should probably run with --cuda")
     else:
         torch.cuda.manual_seed_all(args.seed)
-if args.adv:
-   rate = (ntokens - args.adv_bias) * 1.0 / ntokens
-   adv_criterion = nn.CrossEntropyLoss(weight=torch.Tensor([rate, 1 - rate]).cuda())
-   adv_hidden = nn.Linear(args.emsize, 2).cuda()
-   adv_targets = torch.LongTensor(np.array([0] * args.adv_bias + [1] * (ntokens - args.adv_bias))).cuda()
-   adv_targets = Variable(adv_targets)
-  adv_hidden.weight.data.uniform_(-0.1, 0.1)
+
 ###############################################################################
 # Load data
 ###############################################################################
